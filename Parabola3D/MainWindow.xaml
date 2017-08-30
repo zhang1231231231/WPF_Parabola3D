@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Parabola3D"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Menu" Height="300" Width="300" MinHeight="200" MinWidth="200">
     <Grid>
+        <StackPanel Margin="5">
+            <Button Content="Parabola 3D" Width="200" Height="40" HorizontalAlignment="Left" Click="Parabola_Click"/>
+            <Button Content="Sphere 3D" Width="200" Height="40" HorizontalAlignment="Left" Click="Sphere_Click"/>
+        </StackPanel>
         
     </Grid>
 </Window>

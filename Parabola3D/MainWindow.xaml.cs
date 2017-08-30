@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Reflection;
 
 namespace Parabola3D
 {
@@ -23,6 +24,32 @@ namespace Parabola3D
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Parabola_Click(object sender, RoutedEventArgs e)
+        {
+            // Create an instance of the window named
+            // by the current button.
+            Type type = this.GetType();
+            Assembly assembly = type.Assembly;
+            Window win = (Window)assembly.CreateInstance(
+                type.Namespace + "." + "Parabola3DWindows");
+
+            // Show the window.
+            win.ShowDialog();
+        }
+
+        private void Sphere_Click(object sender, RoutedEventArgs e)
+        {
+            // Create an instance of the window named
+            // by the current button.
+            Type type = this.GetType();
+            Assembly assembly = type.Assembly;
+            Window win = (Window)assembly.CreateInstance(
+                type.Namespace + "." + "Sphere3dWindows");
+
+            // Show the window.
+            win.ShowDialog();
         }
     }
 }
